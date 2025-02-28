@@ -18,7 +18,7 @@ const cardContent = [
     id: 2,
     title: "2457",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, voluptas.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, voluptasm.",
   },
   {
     id: 3,
