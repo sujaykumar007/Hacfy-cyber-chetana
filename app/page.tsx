@@ -1,6 +1,8 @@
+
 import { HeroCard } from "./homepage/_components/HeroSectioncards";
 import PeldgeForm from "./homepage/_components/pledgeForm";
 import { HeroSection } from "./homepage/header";
+import { MarqueeDemo } from "./homepage/Merquee";
 
 
 export default function Home() {
@@ -13,5 +15,6 @@ export default function Home() {
       <div className="w-full container mx-auto">
        <PeldgeForm />
       </div>
+     <MarqueeDemo/>
     </div>
   )}
