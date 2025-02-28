@@ -34,7 +34,7 @@ export default function Navbar() {
 
     return (
         <>
-        <nav className={`w-full pt-10 lg:pt-4 fixed px-5 lg:px-16 xl:px-[10%] py-4 flex items-center justify-between z-50 transition-all duration-300 ${isScroll ? "bg-black backdrop-blur-lg shadow-md" : "bg-white"}`}>   
+        <nav className={`w-full pt-10 lg:pt-4 fixed px-5 lg:px-16 xl:px-[10%] py-4 flex items-center justify-between z-50 transition-all duration-300 ${isScroll ? "bg-white backdrop-blur-lg shadow-md" : "bg-white"}`}>   
             {/* Logo */}
             <Link href="#top">
             
@@ -46,7 +46,7 @@ export default function Navbar() {
             </Link>
 
             {/* ✅ Desktop Menu */}
-            <ul className={`hidden lg:flex items-center gap-6 lg:gap-10 rounded-full px-12 py-3 font-medium text-lg text-black ${isScroll ? "text-white" : "text-black"}`}>
+            <ul className={`hidden lg:flex items-center gap-6 lg:gap-10 rounded-full px-12 py-3 font-medium text-lg text-black ${isScroll ? "text-black" : "text-black"}`}>
                 <li><Link  href="/" >Home</Link></li>
                 <li><Link  href="/about" >About Us</Link></li>
                 <li><Link  href="/services" >Blog</Link></li>
