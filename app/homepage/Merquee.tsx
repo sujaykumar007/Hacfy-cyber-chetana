@@ -44,7 +44,6 @@ const ReviewCard = ({
       <figcaption className="text-3xl font-bold">{name}</figcaption>
       <p className="text-sm mt-2 text-gray-700">{body}</p>
 
-      {/* Number Ticker */}
       <blockquote className="mt-4 text-4xl font-semibold">
         <NumberTicker value={number} decimalPlaces={0} className="text-6xl" />
       </blockquote>
@@ -61,7 +60,6 @@ export function MarqueeDemo() {
         ))}
       </Marquee>
 
-      {/* Gradient effect on edges */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-white"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-white"></div>
     </div>
