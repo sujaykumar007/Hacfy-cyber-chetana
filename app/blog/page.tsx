@@ -8,7 +8,7 @@ export default function Blog() {
         <div className="justify-center items-center ">
         <ImageSwiper/>
         <div className=" grid grid-col-1 gap-4 relative w-full items-center justify-center align-middle  ">
-            <ServiceCard/>
+         <ServiceCard/>
         </div>
         </div>
        

@@ -11,26 +11,57 @@ const slides = [
   {
     id: 1,
     image: "https://swiperjs.com/demos/images/nature-1.jpg",
-    title: "Discover the Beauty",
-    text: "Experience the breathtaking views of nature with stunning landscapes, vibrant colors, and peaceful surroundings that refresh your soul.",
+    title: "Investment Frauds",
+    text: "Scammers promise huge profits on fake investments, tricking people into losing their money.",
   },
   {
     id: 2,
     image: "https://swiperjs.com/demos/images/nature-2.jpg",
-    title: "Nature's Wonders",
-    text: "From the mesmerizing waterfalls to the lush green forests, nature's wonders never cease to amaze us. Explore the hidden beauty of our planet.",
+    title: "Digital Arrest Scams",
+    text: "Fraudsters pose as police or officials, threatening arrest unless victims pay money",
   },
   {
     id: 3,
     image: "https://swiperjs.com/demos/images/nature-3.jpg",
-    title: "Breathtaking Views",
-    text: "Stand atop a mountain and feel the crisp air while admiring the panoramic view. Nature provides the most spectacular scenery that one can witness.",
+    title: "FedEx Scams",
+    text: "Fake courier messages claim parcel issues to steal personal information or payments.",
   },
   {
     id: 4,
     image: "https://swiperjs.com/demos/images/nature-4.jpg",
-    title: "Peaceful Moments",
-    text: "Step away from the chaos and embrace the tranquility of nature. The soothing sound of the breeze, the rustling of leaves, and the calming waves offer a perfect escape.",
+    title: "Phishing Attacks",
+    text: "Fake emails or websites trick users into sharing sensitive details like passwords or bank info",
+  },
+  {
+    id: 5,
+    image: "https://swiperjs.com/demos/images/nature-4.jpg",
+    title: "Ransomware Attacks",
+    text: "Hackers lock personal or business data and demand money to unlock it.",
+  },
+  {
+    id: 6,
+    image: "https://swiperjs.com/demos/images/nature-4.jpg",
+    title: "Online Job Frauds",
+    text: "Fake job offers steal personal information or ask for money in return for jobs.",
+  },
+  {
+    id: 7,
+    image: "https://swiperjs.com/demos/images/nature-4.jpg",
+    title: "Loan App Scams",
+    text: "Fraud apps offer quick loans but misuse data and charge hidden fees",
+  },
+ 
+  {
+    id: 8,
+    image: "https://swiperjs.com/demos/images/nature-4.jpg",
+    title: "Cryptocurrency Frauds",
+    text: "Fake crypto schemes lure people into investing and disappear with their money",
+  },
+  {
+    id: 9,
+    image: "https://swiperjs.com/demos/images/nature-4.jpg",
+    title: "Sextortion Schemes",
+    text: "Criminals blackmail victims after tricking them into sharing private photos or videos.",
   },
 ];
 

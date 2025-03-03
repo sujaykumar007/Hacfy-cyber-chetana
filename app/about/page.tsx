@@ -1,12 +1,17 @@
 import { Component } from "@/components/mision"
 
-
+import Textreveal from "../../components/Textreveal"
 export default function About() {
     return(
-        <div className="h-screen justify-center flex items-center ">
+        <div>
+          <div>
           <Component/>
-        </div>
+          </div>
+          <div>
+        <Textreveal/>
+      </div>
+    </div>
+       
     )
-
   }
   

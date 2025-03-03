@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { assets } from "@/public/assets/assets";
+import "../styles/colors.css"
 
 export default function Navbar() {
     const [isScroll, setIsScroll] = useState(false);
@@ -40,19 +41,20 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Menu */}
-                <ul className="hidden lg:flex items-center gap-6 lg:gap-10 rounded-full px-12 py-3 font-medium text-lg text-black">
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/about">About Us</Link></li>
-                    <li><Link href="/blog">Blog</Link></li>
+                <ul className="hidden lg:flex items-center gap-6 lg:gap-10 rounded-full px-12 py-3 font-medium text-lg text-[var(--primary-blue)] ">
+
+                    <li><Link href="/" className="hover:text-[#ff8533]">Home</Link></li>
+                    <li><Link href="/about" className="hover:text-[#ff8533]">About Us</Link></li>
+                    <li><Link href="/blog" className="hover:text-[#ff8533]">Blog</Link></li>
                 </ul>
 
                 {/* Right Section */}
                 <div className="flex items-center gap-4">
                     
-                     <a href="#pledge" className="hidden lg:flex items-center gap-3 px-14 py-2 border font-medium text-lg border-gray-500 rounded-2xl ml-4 relative overflow-hidden group transition-colors duration-500">
+                     <Link href="/#pledge" className="hidden lg:flex items-center gap-3 px-14 py-2 border font-medium text-lg border-gray-500 rounded-2xl ml-4 relative overflow-hidden group transition-colors duration-500" style={{ color: "var(--primary-blue)"}}>
                     <span className="relative z-10">Pledge</span>
-                    <span className="absolute inset-0 bg-[#ff8533] scale-x-0 origin-left transition-transform duration-1000 ease-out group-hover:scale-x-100"></span>
-                </a>
+                    <span className="absolute inset-0 bg-[#ff8533] scale-x-0 origin-left transition-transform duration-1000 ease-out group-hover:scale-x-100 hover:text-white"></span>
+                </Link>
 
 
                     {/* Hamburger Menu */}
@@ -68,14 +70,14 @@ export default function Navbar() {
                 {/* Mobile Menu */}
                 <ul className={`fixed top-0 right-0 w-64 h-screen bg-white shadow-lg py-20 px-10 transform transition-transform duration-500 ease-in-out z-[1000] ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
                     <div className="absolute right-6 top-6 cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                        <span className="text-3xl text-black">×</span> {/* Unicode close icon */}
+                        <span className="text-3xl">×</span> {/* Unicode close icon */}
                     </div>
 
                     {/* Mobile Menu Links */}
-                    <li className="text-lg font-medium text-gray-800 my-4"><Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-                    <li className="text-lg font-medium text-gray-800 my-4"><Link href="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
-                    <li className="text-lg font-medium text-gray-800 my-4"><Link href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
-                    <li className="text-lg font-medium text-gray-800 my-4"><a href="#pledge" onClick={scrollToPledge}>Pledge</a></li>
+                    <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+                    <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
+                    <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
+                    <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><a href="#pledge" onClick={scrollToPledge}>Pledge</a></li>
                 </ul>  
             </nav>
         </>
