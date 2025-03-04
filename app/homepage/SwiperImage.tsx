@@ -64,7 +64,7 @@ quality={100}/>
   className="rounded-full object-cover"
 />
 
-                  {item.title}
+                 
                 </div>
               </a>
             </SwiperSlide>
