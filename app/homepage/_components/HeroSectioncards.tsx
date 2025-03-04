@@ -12,13 +12,13 @@ export function HeroCard() {
   return (
     <div className="w-full py-24 md:py-36 px-4 md:px-12 bg-white text-black">
       <div className="w-full min-h-[600px] flex flex-col items-center py-16 md:py-6 rounded-3xl text-black px-6 md:px-12 relative">
-        {/* Title Section */}
+      
         <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-full md:w-[80%] text-center px-4">
           <h1 className="text-3xl md:text-5xl font-extrabold " style={{ color: "var(--primary-blue)" }}>Why We Created HacFy Cyber Chetana?</h1>
          
         </div>
 
-        {/* Cards Section */}
+      
         <div className="mt-28 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-12">
           {[
             { title: "Cybercrime Awareness", text: "Educating communities to identify, prevent, and respond to emerging cyber threats.", image: assets.awarness

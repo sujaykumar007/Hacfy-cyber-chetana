@@ -1,14 +1,15 @@
 
-import { ServiceCard } from "@/components/ServiceCard"
-import ImageSwiper from "@/components/swiper"
+import { ServiceCard } from "@/app/blog/component/ServiceCard"
+import ImageSwiper from "@/app/blog/component/swiper"
 
 
 export default function Blog() {
     return(
         <div className="justify-center items-center ">
         <ImageSwiper/>
-        <div className=" grid grid-col-1 gap-4 relative w-full items-center justify-center align-middle  ">
-         <ServiceCard/>
+    
+        <div>
+       <ServiceCard/>
         </div>
         </div>
        

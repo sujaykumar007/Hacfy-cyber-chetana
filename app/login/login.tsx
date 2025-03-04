@@ -7,7 +7,7 @@ export default function LoginForm() {
         >
             <div className="grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-2xl overflow-hidden ">
                 <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left px-8 py-12">
-                    <h1 className="text-6xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight" style={{ color: "var(--primary-blue)" }}>
+                    <h1 className="text-3xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight" style={{ color: "var(--primary-blue)" }}>
                         Take the Cyber Safety Pledge
                     </h1>
                     <h1 className="text-primary-yellow text-xl mt-3" style={{ color: "var(--primary-blue)" }}>
@@ -38,8 +38,8 @@ safeguarding online privacy, and contributing to a secure digital future for our
                             />
                             <input 
                                 className="p-4 text-black rounded-lg border focus:outline-none"
-                                placeholder="Password"
-                                type="password"
+                                placeholder="Phone Number"
+                                type="number"
                             />
                             <button 
                                 className="text-white p-3 rounded-lg font-semibold transition" 

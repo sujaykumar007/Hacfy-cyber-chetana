@@ -13,6 +13,16 @@ import ncpcr from './ncpcr.png'
 import nielit from './nielit.png'
 import karmayogi from './karamayogi.png'
 import weblink from './web-link.png'
+import Blogid1 from "./Blog1.jpg"
+import Blogid2 from "./Blog2.jpg"
+import Blogid3 from "./Blog3.jpg"
+import Blogid4 from "./Blog4.jpg"
+import Blogid5 from "./Blog5.jpg"
+import Blogid6 from "./Blog6.webp"
+import Blogid7 from "./Blog7.jpg"
+import Blogid8 from './Blog8.jpg'
+import Blogid9 from './Blog9.jpg'
+import CyberBackground from "./cyberchetanas.png"
 export const assets ={
     logo,
     menublack,
@@ -28,7 +38,17 @@ export const assets ={
     ncpcr,
     nielit,
     karmayogi,
-    weblink
+    weblink,
+    Blogid1,
+    Blogid2,
+    Blogid3,
+    Blogid4,
+    Blogid5,
+    Blogid6,
+    Blogid7,
+    Blogid8,
+    Blogid9,
+    CyberBackground
 
 
 }
