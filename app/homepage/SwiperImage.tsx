@@ -57,14 +57,14 @@ quality={100}/>
 
     <Image
   src={item.image}
-  alt={item.title}
+  alt=''
   width={100}  
   height={100}
   quality={100} 
   className="rounded-full object-cover"
 />
 
-                  {item.title}
+                  
                 </div>
               </a>
             </SwiperSlide>

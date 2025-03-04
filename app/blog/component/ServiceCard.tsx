@@ -4,7 +4,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { assets } from "@/public/assets/assets";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
 
 const services = [
@@ -72,7 +72,12 @@ const services = [
       "Criminals trick victims into sharing intimate content and later blackmail them for money. Never share sensitive content with strangers and report such incidents to cybercrime portals.",
   },
 ];
-const ServiceCardItem = ({ service, index }: { service: any; index: number }) => {
+const ServiceCardItem = ({ service, index }: { service: {
+  id:number,
+  image:StaticImageData,
+  name:string,
+  description:string
+}; index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-50px" });
 
