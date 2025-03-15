@@ -80,15 +80,16 @@ const ReviewCard = ({
 export function MarqueeDemo() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-white py-10 px-10">
-     <div
-  className="text-lg sm:text-xl md:text-3xl lg:text-5xl font-extrabold text-center mb-6 leading-snug sm:leading-tight md:leading-tight"
+    <div
+  className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-center mb-6 leading-snug sm:leading-tight md:leading-tight"
   style={{ color: "var(--primary-blue)", maxWidth: "90%" }}
 >
-  Cybercrimes in Karnataka are Rising Rapidly, Threatening Lives & Finances!
+  Cybercrimes in Karnataka  
+  <br className="hidden sm:block" />  
+  Rising Rapidly, Threatening Lives & Finances!
 </div>
 
-
-      <Marquee pauseOnHover className="[--duration:20s] flex w-full gap-4">
+      <Marquee pauseOnHover className="[--duration:50s] flex w-full gap-4">
         {reviews.map((review, index) => (
           <ReviewCard key={index} {...review} />
         ))}

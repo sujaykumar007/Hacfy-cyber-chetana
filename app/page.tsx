@@ -29,7 +29,7 @@ export default function Home() {
 </div>
 
       {/* Swiper Component */}
-      <div className="w-full h-auto md:h-1/2 mt-40 md:mt-0 sm:mt-0 mb-20 flex justify-center items-center">
+      <div className="w-full h-auto md:h-1/2 mt-70 md:mt-0 sm:mt-0 mb-20 flex justify-center items-center">
   <SwiperComponent />
 </div>
 
