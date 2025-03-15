@@ -46,15 +46,15 @@ export default function Footer() {
 
               <li className="hover:text-primary-hover cursor-pointer"><Link href='/'>Home</Link></li>
                 <li className="hover:text-primary-hover cursor-pointer"><Link href='/about'>About Us</Link></li>
-                <li className="hover:text-primary-hover cursor-pointer"><Link href='/services'>Blog</Link></li>
+                <li className="hover:text-primary-hover cursor-pointer"><Link href='/blog'>Blog</Link></li>
               
-                <li className="hover:text-primary-hover cursor-pointer"><Link href='/contact'>Pledge</Link></li>
+                <li className="hover:text-primary-hover cursor-pointer"><Link href='/#pledge'>Pledge</Link></li>
 
               </ul>
             </div>
           </div>
 
-          <div className="border-t mt-8 pt-6 flex flex-col md:flex-row justify-between text-sm text-black">
+          <div className="border-t mt-8 pt-6 flex flex-col md:flex-row justify-between text-sm" style={{ color: "var(--primary-blue)"}}>
             <p>Copyright © 2025 Hacfy Cyber Chetana. All Rights Reserved.</p>
             <div className="flex gap-4 mt-2 md:mt-0">
               <a href="#" className="hover:text-primary-hover">User Terms & Conditions</a>
