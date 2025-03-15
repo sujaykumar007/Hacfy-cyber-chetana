@@ -77,7 +77,7 @@ export default function Navbar() {
                     <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
                     <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
                     <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
-                    <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><a href="#pledge" onClick={scrollToPledge}>Pledge</a></li>
+                    <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><a href="/#pledge" onClick={scrollToPledge}>Pledge</a></li>
                 </ul>  
             </nav>
         </>
