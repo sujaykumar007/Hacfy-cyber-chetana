@@ -24,7 +24,7 @@ export default function Home() {
       </div>
 
       {/* Pledge Form Section */}
-      <div className="container mx-auto w-full  md:mt-0 justify-center">
+      <div className="container mx-auto w-full  md:mt-0 justify-center items-center">
   <PledgeForm />
 </div>
 
