@@ -24,12 +24,12 @@ export default function Home() {
       </div>
 
       {/* Pledge Form Section */}
-      <div className="container mx-auto w-full">
-        <PledgeForm />
-      </div>
+      <div className="container mx-auto w-full mt-20 md:mt-0">
+  <PledgeForm />
+</div>
 
       {/* Swiper Component */}
-      <div className="w-full h-auto md:h-1/2 mt-30 md:mt-0 mb-20 flex justify-center items-center">
+      <div className="w-full h-auto md:h-1/2 mt-40 md:mt-0 sm:mt-0 mb-20 flex justify-center items-center">
   <SwiperComponent />
 </div>
 
