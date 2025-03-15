@@ -19,12 +19,13 @@ const links = [
 
 const SwiperHome = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center h-[60vh]">
-      <div className="text-4xl md:text-5xl xl font-extrabold mb-10 text-center" style={{ color: "var(--primary-blue)" }}>
+    <div className="w-full flex flex-col items-center justify-center mt-6 md:mt-10 lg:mt-14">
+
+      <div className="text-4xl md:text-5xl font-extrabold mb-10 text-center" style={{ color: "var(--primary-blue)" }}>
         <Image
           src={assets.weblink}
           alt="link"
-          className="w-10 inline mr-5 h-10"
+          className="w-10 inline mr-5 h-10 "
           quality={100}
         />
         Useful Links
@@ -32,13 +33,18 @@ const SwiperHome = () => {
 
       <div className="w-full h-[20vh] max-h-screen flex items-center justify-center">
         <Swiper
-          slidesPerView={4}
+          slidesPerView={1} // Default: 1 slide on mobile
           spaceBetween={20}
           freeMode={true}
           pagination={{ clickable: true }}
           loop={true}
-          autoplay={{ delay: 0, disableOnInteraction: true }}
-          speed={6000}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          speed={1000}
+          breakpoints={{
+            640: { slidesPerView: 1 }, // Ensuring 1 slide on small screens
+            768: { slidesPerView: 2 }, // 2 slides on tablets
+            1024: { slidesPerView: 4 }, // 4 slides on desktops
+          }}
           modules={[Pagination, FreeMode, Autoplay]}
           className="h-full"
         >

@@ -3,9 +3,9 @@ export default function LoginForm() {
     return (
         <section 
             id="pledge" 
-            className="flex justify-center items-center px-4 container  pb-0"
+            className="flex justify-center items-center px-4 container  pb-0 h-screen"
         >
-            <div className="grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-2xl overflow-hidden ">
+            <div className="grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-2xl overflow-hidden  ">
                 <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left px-8 py-12">
                     <h1 className="text-3xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight" style={{ color: "var(--primary-blue)" }}>
                         Take the Cyber Safety Pledge

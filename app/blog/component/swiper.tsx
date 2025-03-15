@@ -87,7 +87,7 @@ const ImageSwiper = () => {
             shadowScale: 0.94,
             
           }}
-          className="w-[300px] h-[300px] md:w-[400px] md:h-[400px]"
+          className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-2xl bg-transparent shadow-none justify-center items-center"
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} 
         >
           {slides.map((slide) => (

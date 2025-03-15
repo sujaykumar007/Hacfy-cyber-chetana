@@ -1,34 +1,38 @@
-
-
 import { HeroCard } from "./homepage/_components/HeroSectioncards";
-import PeldgeForm from "./homepage/_components/pledgeForm";
+import PledgeForm from "./homepage/_components/pledgeForm"; // Fixed spelling
 import { HeroSection } from "./homepage/header";
 import { MarqueeDemo } from "./homepage/Merquee";
 import SwiperHome from "./homepage/SwiperHome";
 import SwiperComponent from "./homepage/SwiperImage";
 
-
-
-
 export default function Home() {
   return (
-    <div>
-      <div className="w-full  mx-auto">
-        <HeroSection />
-        <div> <MarqueeDemo/></div>
+    <div className="w-full mx-auto">
+      <HeroSection />
 
-        <div>
-          <SwiperHome/>       
-           </div>
-        <HeroCard />
-      </div>
-      <div className="w-full container mx-auto">
-       <PeldgeForm />
-     
-      </div>
-      <div>
-<SwiperComponent/>
+      <div className="w-full flex flex-col h-auto md:h-screen">
+  <div className="h-auto md:h-1/2 w-full">
+    <MarqueeDemo />
+  </div>
+  <div className="h-auto md:h-1/2 w-full">
+    <SwiperHome />
+  </div>
 </div>
-    
+
+<div className="h-1/2 w-full">
+      <HeroCard />
+      </div>
+
+      {/* Pledge Form Section */}
+      <div className="container mx-auto w-full">
+        <PledgeForm />
+      </div>
+
+      {/* Swiper Component */}
+      <div className="w-full h-auto md:h-1/2 mt-30 md:mt-0 mb-20 flex justify-center items-center">
+  <SwiperComponent />
+</div>
+
     </div>
-  )}
+  );
+}

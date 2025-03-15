@@ -12,7 +12,8 @@ export default function BackgroundImage() {
                     layout="fill"
                     objectFit="cover"
                     priority
-                    className="top-0 left-0 w-full h-full"
+                    fill
+                    className="top-0 left-0"
                 />
             </div>
 
