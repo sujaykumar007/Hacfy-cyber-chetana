@@ -89,7 +89,7 @@ export function MarqueeDemo() {
   Rising Rapidly, Threatening Lives & Finances!
 </div>
 
-      <Marquee pauseOnHover className="[--duration:50s] flex w-full gap-4">
+      <Marquee pauseOnHover className="[--duration:70s] flex w-full gap-4">
         {reviews.map((review, index) => (
           <ReviewCard key={index} {...review} />
         ))}
