@@ -24,9 +24,9 @@ export function HeroCard() {
             { title: "Cybercrime Awareness", text: "Educating communities to identify, prevent, and respond to emerging cyber threats.", image: assets.awarness
               
              },
-            { title: "Women Digital Safety", text: "Empowering women with knowledge and tools to navigate the digital world securely", image:assets.society },
-            { title: "Youth Empowerment", text:   "Equipping the next generation with cybersecurity skills to build a safer digital future", image:assets.Safety },
-            { title: "Secure Digital Society", text: "Creating a digitally resilient ecosystem through awareness, education, and community collaboration.", image:assets.Empowerment },
+            { title: "Women Digital Safety", text: "Empowering women with knowledge and tools to navigate the digital world securely",  image:assets.Safety},
+            { title: "Youth Empowerment", text:   "Equipping the next generation with cybersecurity skills to build a safer digital future", image:assets.Empowerment },
+            { title: "Secure Digital Society", text: "Creating a digitally resilient ecosystem through awareness, education, and community collaboration.",  image:assets.society},
           ].map((item, index) => (
             <Card key={index} className="bg-white text-black shadow-lg transition-transform duration-300 hover:-translate-y-3">
               <CardHeader className="flex flex-col items-center">

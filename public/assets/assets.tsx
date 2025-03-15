@@ -22,7 +22,7 @@ import Blogid6 from "./Blog6.webp"
 import Blogid7 from "./Blog7.jpg"
 import Blogid8 from './Blog8.jpg'
 import Blogid9 from './Blog9.jpg'
-import CyberBackground from "./cyberchetanas.png"
+import CyberBackground from "./cyberchetana.png"
 export const assets ={
     logo,
     menublack,

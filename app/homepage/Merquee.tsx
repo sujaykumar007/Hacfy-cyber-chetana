@@ -12,7 +12,7 @@ const reviews = [
   {
     name: "Cybercrime Cases Reported in Karnataka",
     number: 20875,
-    unit: "",
+    unit: "Cases",
   },
   {
     name: "Industry Impact in Karnataka",
@@ -22,7 +22,7 @@ const reviews = [
   {
     name: "Daily Cybercrime Cases Registered in Karnataka",
     number: 63,
-    unit: "",
+    unit: "Cases",
   },
 ];
 

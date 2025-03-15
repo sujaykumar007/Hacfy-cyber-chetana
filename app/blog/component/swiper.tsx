@@ -28,6 +28,43 @@ const slides = [
     title: "FedEx Scams",
     text: "Fake courier messages claim parcel issues to steal personal information or payments.",
   },
+  {
+    id: 4,
+    image: assets.Blogid4,
+    title: "Phishing Attacks",
+    text: "Fake emails or websites trick users into sharing sensitive details like passwords or bank info.",
+  },
+  {
+    id: 5,
+    image: assets.Blogid5,
+    title: "Ransomware Attacks",
+    text: "Hackers lock personal or business data and demand money to unlock it.",
+  },
+  {
+    id: 6,
+    image: assets.Blogid6,
+    title: "Online Job Frauds",
+    text: "Fake job offers steal personal information or ask for money in return for jobs.",
+  },
+  {
+    id: 7,
+    image: assets.Blogid7,
+    title: "Loan App Scams",
+    text: "Fraud apps offer quick loans but misuse data and charge hidden fees.",
+  },
+  {
+    id: 8,
+    image: assets.Blogid8,
+    title: "Cryptocurrency Frauds",
+    text: "Fake crypto schemes lure people into investing and disappear with their money.",
+  },
+  {
+    id: 9,
+    image: assets.Blogid9,
+    title: "Sextortion Schemes:",
+    text: " Criminals blackmail victims after tricking them into sharing private photos or videos.",
+  }
+
 ];
 
 const ImageSwiper = () => {
