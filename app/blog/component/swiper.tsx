@@ -60,7 +60,7 @@ const slides = [
   },
   {
     id: 9,
-    image: assets.Blogid5,
+    image: assets.Blogid6,
     title: "Sextortion Schemes:",
     text: " Criminals blackmail victims after tricking them into sharing private photos or videos.",
   }
