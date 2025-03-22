@@ -26,7 +26,7 @@ export function HeroSection() {
    
       <div className="relative z-10 flex flex-col gap-y-6 max-w-3xl text-left text-white">
         <h1 className="text-6xl md:text-7xl font-extrabold">
-          <span style={{ color: "var(--primary-orange)" }}>Awareness</span> Today,
+          <span style={{ color: "var(--primary-orange)" }}>Awareness</span> Today
           <br />
           <span style={{ color: "var(--primary-orange)" }}>Security</span> Tomorrow
       .
