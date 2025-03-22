@@ -38,7 +38,7 @@ const services = [
   },
   {
     id: 5,
-    image: assets.Blogid5,
+    image: assets.Blogid6,
     name: "Ransomware Attacks",
     description:
       "Ransomware attacks encrypt a victim's files, demanding payment to unlock them. These attacks target both individuals and organizations. Keep your software updated, use strong passwords, and back up data regularly to avoid falling victim.",

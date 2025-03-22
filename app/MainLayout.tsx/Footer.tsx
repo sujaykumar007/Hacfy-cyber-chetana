@@ -16,7 +16,7 @@ export default function Footer() {
 
               </div>
               <p className="mt-3 text-gray-300 text-sm" style={{ color: "var(--primary-blue)"}}>
-              CyberProbex specializes in Network Security, API Security, Mobile & Web Application Security Audits, ISO 27001 Compliance, and vCISO Services. We help businesses strengthen their security posture with cutting-edge solutions and expert assessments.              </p>
+              HacFy Cyber Chetana empowers Karnataka with cybersecurity awareness, focusing on women’s digital safety, youth empowerment, and community resilience. Building a secure and informed digital society. </p>
 {/* 
               <button className="hover:opacity-300 transition flex gap-5 mt-4">
               <Image src={assets.logoX} className="w-8" alt="" />
