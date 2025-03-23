@@ -32,8 +32,8 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold" style={{ color: "var(--primary-blue)"}}>Services</h3>
               <ul className="mt-3 space-y-2" style={{ color: "var(--primary-blue)"}}>
-                <li className="hover:text-[#] cursor-pointer" > <Link href={"/services"}>web application Penetration Testing</Link> </li>
-                <li className="hover:text-[#ffA500] cursor-pointer"><Link href={"/services"}>Cloud Penetration Testing</Link></li>
+                <li className="hover:text-[#] cursor-pointer" > <Link href={"/services"}>Guides & Resources</Link> </li>
+                <li className="hover:text-[#ffA500] cursor-pointer"><Link href={"/services"}>Phishing & Fraud Detection</Link></li>
                 <li className="hover:text-[#ffA500] cursor-pointer"><Link href={"/services"}>Network Penetration Testing</Link></li>
                 <li className="hover:text-[#ffA500] cursor-pointer"><Link href={"/services"}>Mobile application Penetration Testing</Link></li>
                 <li className="hover:text-[#ffA500] cursor-pointer"><Link href={"/services"}>IoT Penetration Testing</Link></li>
