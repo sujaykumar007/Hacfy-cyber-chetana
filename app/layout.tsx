@@ -7,7 +7,7 @@ import Footer from "./MainLayout.tsx/Footer";
 // Load Poppins font
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // Include necessary font weights
+  weight: ["400", "500", "600", "700"], 
   display: "swap",
   variable: "--font-poppins",
 });
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "Stay updated with the latest trends in cybersecurity, technology, and more. Powered by CyberProbeX.",
   icons: {
     icon: [
-      { url: "/HC.png", sizes: "128x128", type: "image/png" },  // Larger favicon for better visibility
+      { url: "/HC.png", sizes: "128x128", type: "image/png" }, 
       
     ]
   },
