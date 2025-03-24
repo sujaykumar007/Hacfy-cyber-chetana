@@ -10,7 +10,7 @@ import { assets } from "@/public/assets/assets";
 
 export function HeroCard() {
   return (
-    <div className="w-full py-24 md:py-36 px-4 md:px-12 bg-white text-black">
+    <div className="w-full py-24 md:py-36 px-4 md:px-12 bg-white text-black ">
       <div className="w-full flex flex-col items-center py-16 md:py-6 rounded-3xl text-black px-6 md:px-12 relative">
       
         <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-full md:w-[80%] text-center px-4">

@@ -29,17 +29,7 @@ export default function Footer() {
     
             </div>
 
-            <div>
-              <h3 className="font-semibold" style={{ color: "var(--primary-blue)"}}>Services</h3>
-              <ul className="mt-3 space-y-2" style={{ color: "var(--primary-blue)"}}>
-                <li className="hover:text-[#] cursor-pointer" > <Link href={"/services"}>Guides & Resources</Link> </li>
-                <li className="hover:text-[#ffA500] cursor-pointer"><Link href={"/services"}>Phishing & Fraud Detection</Link></li>
-                <li className="hover:text-[#ffA500] cursor-pointer"><Link href={"/services"}>Network Penetration Testing</Link></li>
-                <li className="hover:text-[#ffA500] cursor-pointer"><Link href={"/services"}>Mobile application Penetration Testing</Link></li>
-                <li className="hover:text-[#ffA500] cursor-pointer"><Link href={"/services"}>IoT Penetration Testing</Link></li>
-              </ul>
-            </div>
-
+           
             <div>
               <h3 className="font-semibold " style={{ color: "var(--primary-blue)"}}>Company</h3>
               <ul className="mt-3 space-y-2 " style={{ color: "var(--primary-blue)"}}>
@@ -52,6 +42,22 @@ export default function Footer() {
 
               </ul>
             </div>
+            <div>
+  <h3 className="font-semibold" style={{ color: "var(--primary-blue)" }}>
+    Contact
+  </h3>
+  <ul className="mt-3 space-y-2" style={{ color: "var(--primary-blue)" }}>
+   
+    <li className="hover:text-primary-hover cursor-pointer">
+      <Link href="mailto:Hacfy@gmail.com" className="hover:text-[#ff8533]">Hacfy@gmail.com</Link>
+    </li>
+
+
+    <li className="hover:text-primary-hover cursor-pointer">
+      <Link href="tel:+918660767853" className="hover:text-[#ff8533]">+91 8660767853</Link>
+    </li>
+  </ul>
+</div>
           </div>
 
           <div className="border-t mt-8 pt-6 flex flex-col md:flex-row justify-between text-sm" style={{ color: "var(--primary-blue)"}}>

@@ -23,6 +23,10 @@ import Blogid7 from "./Blog7.jpg"
 import Blogid8 from './Blog8.jpg'
 import Blogid9 from './Blog9.jpg'
 import CyberBackground from "./cyberchetana.png"
+import image1 from "./sbiimage.png"
+import image2 from "./sbiimage1.png"
+import image3 from "./sbiimage2.png"
+import image4 from "./sbiimage3.png"
 export const assets ={
     logo,
     menublack,
@@ -48,7 +52,11 @@ export const assets ={
     Blogid7,
     Blogid8,
     Blogid9,
-    CyberBackground
+    CyberBackground,
+    image1,
+    image2,
+    image3,
+    image4
 
 
 }

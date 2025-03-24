@@ -69,7 +69,7 @@ export default function LoginForm() {
     };
 
     const handleSubmit = async () => {
-        // Trim input values without setting state immediately
+        // Trim input values
         const trimmedData = {
             firstName: formData.firstName.trim(),
             lastName: formData.lastName.trim(),
@@ -78,7 +78,7 @@ export default function LoginForm() {
         };
 
         try {
-            const response = await fetch("http://localhost:3000/register", {
+            const response = await fetch("/api/certificate", {  // ✅ Fixed API URL
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -88,13 +88,13 @@ export default function LoginForm() {
 
             const data = await response.json();
             if (response.ok) {
-                alert("Registration successful! Check your email.");
-                setFormData({ firstName: "", lastName: "", email: "", phoneNumber: "" }); // Clear form after success
+                alert("✅ Registration successful! Check your email.");
+                setFormData({ firstName: "", lastName: "", email: "", phoneNumber: "" }); // Clear form
             } else {
-                alert("Error: " + data.error);
+                alert("❌ Error: " + data.error);
             }
         } catch (error) {
-            console.error("Error:", error);
+            console.error("❌ Error:", error);
             alert("Something went wrong!");
         }
     };
@@ -149,7 +149,7 @@ export default function LoginForm() {
                                 className="p-3 md:p-4 text-black rounded-lg border focus:outline-none"
                                 placeholder="Phone Number"
                                 name="phoneNumber"
-                                type="text" // Change from "number" to "text" to avoid auto-truncation
+                                type="text" 
                                 value={formData.phoneNumber}
                                 onChange={handleChange}
                             />

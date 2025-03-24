@@ -21,7 +21,7 @@ export function HeroSection() {
       <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
 
    
-      <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-t from-[whitesmoke] to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-t from-[whitesmoke] to-transparent"></div>
 
    
       <div className="relative z-10 flex flex-col gap-y-6 max-w-3xl text-left text-white">

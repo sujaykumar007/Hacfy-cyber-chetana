@@ -7,69 +7,53 @@ import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 import 'swiper/css/autoplay';
 import Image from 'next/image';
-import { assets } from '@/public/assets/assets';
 
 const links = [
-  { image: '/assets/ncpcr.png', text: "Cyber Chetana", description: "Lorem ipsum dolor sit amet." },
-  { image: '/assets/nielit.png', text: "Cyber Chetana", description: "Lorem ipsum dolor sit amet." },
-  { image: '/assets/isea.png', text: "Cyber Chetana", description: "Lorem ipsum dolor sit amet." },
-  { image: '/assets/cybercrime.png', text: "Cyber Chetana", description: "Lorem ipsum dolor sit amet." },
-  { image: '/assets/crtn.jpg', text: "Cyber Chetana", description: "Lorem ipsum dolor sit amet." },
+  { image: '/assets/sbiimage.png', text: 'Scam 1' },
+  { image: '/assets/sbiimage1.png', text: 'Scam 2' },
+  { image: '/assets/sbiimage2.png', text: 'Scam 3' },
+  { image: '/assets/sbiimage3.png', text: 'Scam 4' },
 ];
 
 const SwiperHome = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center mt-6 md:mt-10 lg:mt-14">
-
-      <div className="text-4xl md:text-5xl font-extrabold mb-10 text-center" style={{ color: "var(--primary-blue)" }}>
-        <Image
-          src={assets.weblink}
-          alt="link"
-          className="w-10 inline mr-5 h-10 "
-          quality={100}
-        />
-        Useful Links
+    <div className="w-full flex flex-col items-center justify-center mt-6 md:mt-10 lg:mt-14 mb-30">
+      <div className="text-4xl md:text-5xl  font-extrabold mb-30 text-center" style={{ color: "var(--primary-blue)" }}>
+        Recent Scams Happened in Karnataka
       </div>
 
-      <div className="w-full h-[20vh] max-h-screen flex items-center justify-center">
+      <div className="w-full max-h-screen flex items-center justify-center">
         <Swiper
-          slidesPerView={1} // Default: 1 slide on mobile
-          spaceBetween={20}
+          slidesPerView={1}
+          spaceBetween={10}
           freeMode={true}
           pagination={{ clickable: true }}
           loop={true}
           autoplay={{ delay: 2000, disableOnInteraction: false }}
           speed={1000}
           breakpoints={{
-            640: { slidesPerView: 1 }, // Ensuring 1 slide on small screens
-            768: { slidesPerView: 2 }, // 2 slides on tablets
-            1024: { slidesPerView: 4 }, // 4 slides on desktops
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 4 },
           }}
           modules={[Pagination, FreeMode, Autoplay]}
           className="h-full"
         >
           {links.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center justify-center h-full p-4 rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 bg-white">
+              <div className="flex flex-col items-center justify-center h-full w-full">
                 <Image
                   src={item.image}
                   alt={item.text}
-                  width={100}
+                  width={300}
                   height={100}
                   quality={100}
-                  className="object-cover rounded-full mb-4"
+                  className="object-cover rounded-lg shadow-md"
                 />
-                <div className="font-semibold text-lg text-center text-gray-800">{item.text}</div>
-                <p className="text-sm text-center text-gray-600 mt-2">{item.description}</p>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-
-      {/* Pagination Styling */}
-      <div className="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal mt-6">
-        {/* You can further style the pagination here */}
       </div>
     </div>
   );
