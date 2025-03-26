@@ -32,7 +32,7 @@ export default function Navbar() {
         <>
             <nav className={`w-full pt-10 lg:pt-4 fixed px-5 lg:px-16 xl:px-[10%] py-4 flex items-center justify-between z-50 transition-all duration-300 ${isScroll ? "bg-white backdrop-blur-lg shadow-md" : "bg-white"}`}>
                 {/* Logo */}
-                <Link href="#top">
+                <Link href="/">
                     <Image 
                         src={assets.logo} 
                         alt="Logo" 

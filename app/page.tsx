@@ -14,7 +14,7 @@ export default function Home() {
   <div className="h-auto md:h-1/2 w-full">
     <MarqueeDemo />
   </div>
-  <div className="h-auto md:h-1/2 w-full">
+  <div>
     <SwiperHome />
   </div>
 </div>

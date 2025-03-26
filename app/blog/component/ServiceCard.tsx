@@ -10,63 +10,63 @@ import { useRef } from "react";
 const services = [
   {
     id: 1,
-    image: assets.Blogid1,
+    image: assets.Blogid2,
     name: "Investment Frauds",
     description:
       "Investment frauds involve scammers offering fake investment opportunities with promises of high returns. Victims are often lured through social media or cold calls. Once the money is transferred, the fraudsters disappear. Always verify investment platforms through official regulatory bodies like SEBI.",
   },
   {
     id: 2,
-    image: assets.Blogid2,
+    image: assets.Blogid1,
     name: "Digital Arrest Scams",
     description:
       "In this scam, criminals impersonate law enforcement officials, claiming the victim is involved in illegal activities. They demand immediate payments to avoid arrest. Remember, police or government agencies will never ask for payments through calls or messages.",
   },
   {
     id: 3,
-    image: assets.Blogid3,
+    image: assets.Blogid7,
     name: "FedEx Scams",
     description:
       "Victims receive messages claiming their parcel is stuck due to customs issues or verification problems. The message asks for personal information or payment to resolve the issue. Always contact the courier company directly through their official website.",
   },
   {
     id: 4,
-    image: assets.Blogid4,
+    image: assets.Blogid3,
     name: "Phishing Attacks",
     description:
       "Phishing scams trick people into revealing sensitive information like passwords, bank details, or OTPs. These scams often come through fake emails or websites. Always verify the sender's email and avoid clicking suspicious links.",
   },
   {
     id: 5,
-    image: assets.Blogid6,
+    image: assets.Blogid4,
     name: "Ransomware Attacks",
     description:
       "Ransomware attacks encrypt a victim's files, demanding payment to unlock them. These attacks target both individuals and organizations. Keep your software updated, use strong passwords, and back up data regularly to avoid falling victim.",
   },
   {
     id: 6,
-    image: assets.Blogid6,
+    image: assets.Blogid9,
     name: "Online Job Frauds",
     description:
       "Fake job offers are circulated through social media or email, asking for personal details or money in exchange for job placements. Research the company thoroughly and avoid paying any money for job applications.",
   },
   {
     id: 7,
-    image: assets.Blogid7,
+    image: assets.Blogid8,
     name: "Loan App Scams",
     description:
       "Fraudulent lending apps offer quick loans but misuse borrowers' data and charge hidden fees. Always check app reviews and verify their registration with RBI before applying.",
   },
   {
     id: 8,
-    image: assets.Blogid8,
+    image: assets.Blogid6,
     name: " Cryptocurrency Frauds",
     description:
       "Scammers create fake crypto investment platforms, promising huge profits. Once the money is invested, they disappear. Only invest through registered and verified platforms.",
   },
   {
     id: 9,
-    image: assets.Blogid9,
+    image: assets.Blogid10,
     name: "Sextortion Schemes",
     description:
       "Criminals trick victims into sharing intimate content and later blackmail them for money. Never share sensitive content with strangers and report such incidents to cybercrime portals.",

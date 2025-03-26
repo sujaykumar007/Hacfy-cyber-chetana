@@ -18,7 +18,7 @@ const links = [
 const SwiperHome = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center mt-6 md:mt-10 lg:mt-14 mb-30">
-      <div className="text-4xl md:text-5xl  font-extrabold mb-30 text-center" style={{ color: "var(--primary-blue)" }}>
+      <div className="text-2xl md:text-5xl  font-extrabold mb-30 text-center" style={{ color: "var(--primary-blue)" }}>
         Recent Scams Happened in Karnataka
       </div>
 
