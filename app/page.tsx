@@ -19,7 +19,7 @@ export default function Home() {
   </div>
 </div>
 
-<div className=" h-auto w-full mt-[-140] lg:mt-50 sm:mt-0">
+<div className=" h-auto w-full mt-[-140] lg:mt-20 sm:mt-0">
   <HeroCard />
 </div>
 
