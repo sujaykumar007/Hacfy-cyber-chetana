@@ -19,9 +19,9 @@ export default function Home() {
   </div>
 </div>
 
-<div className="h-1/2 w-full">
-      <HeroCard />
-      </div>
+<div className="h-1/2 w-full mt-[-140] sm:mt-0">
+  <HeroCard />
+</div>
 
       {/* Pledge Form Section */}
       <div className="container mx-auto w-full  md:mt-0 justify-center items-center">

@@ -46,7 +46,7 @@ const SwiperComponent = () => {
           className="h-full"
         >
           {links.map((item, index) => (
-            <SwiperSlide key={index} className="flex items-center justify-center">
+            <SwiperSlide key={index} className="flex items-center justify-center m-10">
               <a href={item.url} target="_blank" rel="noopener noreferrer">
                 <div className="flex flex-col items-center justify-center min-h-[150px] h-full text-lg p-4 rounded-full shadow-lg bg-white w-40">
                   <Image src={item.image} alt="" width={100} height={100} quality={100} className="h-24 w-24 object-contain" />
