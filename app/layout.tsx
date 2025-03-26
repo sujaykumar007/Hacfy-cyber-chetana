@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "Stay updated with the latest trends in cybersecurity, technology, and more. Powered by CyberProbeX.",
   icons: {
     icon: [
-      { url: "/HC.png", sizes: "128x128", type: "image/png" }, 
+      { url: "/HC.png", sizes: "240x240", type: "image/png" }, 
       
     ]
   },
