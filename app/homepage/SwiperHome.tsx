@@ -46,9 +46,9 @@ const SwiperHome = () => {
                   src={item.image}
                   alt={item.text}
                   width={300}
-                  height={100}
+                  height={80}
                   quality={100}
-                  className="object-cover rounded-lg shadow-md"
+                  className="object-cover rounded-lg shadow-2xl border-blue-100 border-2"
                 />
               </div>
             </SwiperSlide>
