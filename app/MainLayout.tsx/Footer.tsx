@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faYoutube, faFacebook, faTwitter, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faYoutube, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+
 import { assets } from "@/public/assets/assets";
 import Image from "next/image";
 import Link from "next/link";
