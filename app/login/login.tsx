@@ -111,7 +111,9 @@ export default function LoginForm() {
                         Take the Cyber Safety Pledge
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl mt-3" style={{ color: "var(--primary-blue)" }}>
-                        I, ____________, pledge to become a Cyber Awareness Ambassador with HacFy Cyber Chetana...
+                        
+I, ____________, pledge to become a Cyber Awareness Ambassador with HacFy Cyber Chetana, dedicating myself to building a cyber-safe society by promoting digital awareness, empowering women and youth, and standing against all forms of cybercrimes. I commit to spreading ethical digital practices,
+safeguarding online privacy, and contributing to a secure digital future for our community and nation. Together, let's create a cyber-resilient Karnataka and inspire others to be responsible digital citizens.
                     </p>
                 </div>
 
