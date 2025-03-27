@@ -28,6 +28,8 @@ import image1 from "./sbiimage.png"
 import image2 from "./sbiimage1.png"
 import image3 from "./sbiimage2.png"
 import image4 from "./sbiimage3.png"
+import image5 from "./sbi5.png"
+import image6 from "./tickets.png"
 
 export const assets ={
     logo,
@@ -59,7 +61,9 @@ export const assets ={
     image1,
     image2,
     image3,
-    image4
+    image4,
+    image5,
+    image6
 
 
 }

@@ -74,11 +74,11 @@ export default function Footer() {
            
              
                     
-            <div className="  mt-2 md:mt-0">
+            <div className="  mt-2 md:mt-0 hover:text-[#ff8533]">
               <div>
-              <Link href="/UserTerma" className=""  style={{ color: "var(--primary-blue)" }}>User Terms & Conditions</Link>
+              <Link href="/UserTerma" className="hover:text-[#ff8533]"  style={{ color: "var(--primary-blue)" }}>User Terms & Conditions</Link>
               </div>
-              <Link href="/UserTerma" className="" style={{ color: "var(--primary-blue)" }}>Privacy Policy</Link>
+              <Link href="/UserTerma" className="hover:text-[#ff8533]" style={{ color: "var(--primary-blue)" }}>Privacy Policy</Link>
             </div>
             </div>
 

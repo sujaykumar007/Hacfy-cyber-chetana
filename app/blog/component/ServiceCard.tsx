@@ -72,12 +72,9 @@ const services = [
       "Criminals trick victims into sharing intimate content and later blackmail them for money. Never share sensitive content with strangers and report such incidents to cybercrime portals.",
   },
 ];
-const ServiceCardItem = ({ service, index }: { service: {
-  id:number,
-  image:StaticImageData,
-  name:string,
-  description:string
-}; index: number }) => {
+const ServiceCardItem = ({ service, index }: { 
+  service: { id: number; image: StaticImageData; name: string; description: string }; 
+  index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-50px" });
 
@@ -93,17 +90,15 @@ const ServiceCardItem = ({ service, index }: { service: {
     >
       <Card className="relative flex flex-col md:flex-row items-center overflow-hidden w-full max-w-6xl border shadow-lg rounded-2xl p-4 md:p-6">
         
-
         <div className="w-full md:w-1/3 flex justify-center">
           <Image
             src={service.image}
             alt={service.name}
             width={600}
-            className="rounded-xl object-cover border shadow-md w-full md:w-auto"
+            className="rounded-xl object-cover border shadow-md w-full md:w-auto transition-all duration-500 filter grayscale hover:grayscale-0"
           />
         </div>
 
-     
         <CardContent className="w-full md:w-2/3 text-center md:text-left">
           <CardHeader>
             <CardTitle
@@ -119,6 +114,13 @@ const ServiceCardItem = ({ service, index }: { service: {
           >
             {service.description}
           </CardDescription>
+
+          {/* Know More Button */}
+          <div className="mt-6 flex justify-end">
+            <button className="relative overflow-hidden rounded-lg px-6 py-2 font-semibold text-white bg-blue-900">
+              Know More
+            </button>
+          </div>
         </CardContent>
 
         <BorderBeam duration={8} size={100} />
@@ -137,87 +139,3 @@ export function ServiceCard() {
     </div>
   );
 }
-// "use client";
-
-// import { BorderBeam } from "@/components/magicui/border-beam";
-// import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-// import { motion, useInView } from "framer-motion";
-// import Image from "next/image";
-// import { useRef, useEffect, useState } from "react";
-
-// interface Service {
-//   id: string;
-//   imageUrl: string;
-//   name: string;
-//   description: string;
-// }
-
-// const ServiceCardItem = ({ service, index }: { service: Service; index: number }) => {
-//   const ref = useRef(null);
-//   const isInView = useInView(ref, { once: false, margin: "-50px" });
-
-//   const slideDirection = index % 2 === 0 ? -100 : 100;
-
-//   return (
-//     <motion.div
-//       ref={ref}
-//       initial={{ opacity: 0, x: slideDirection }}
-//       animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : slideDirection }}
-//       transition={{ duration: 0.5, delay: index * 0.1 }}
-//       className="flex justify-center px-4 md:px-8 w-full"
-//     >
-//       <Card className="relative flex flex-col md:flex-row items-center overflow-hidden w-full max-w-6xl border shadow-lg rounded-2xl p-4 md:p-6">
-//         <div className="w-full md:w-1/3 flex justify-center">
-//           <Image
-//             src={service.imageUrl}
-//             alt={service.name}
-//             width={600}
-//             height={400}
-//             className="rounded-xl object-cover border shadow-md w-full md:w-auto"
-//           />
-//         </div>
-
-//         <CardContent className="w-full md:w-2/3 text-center md:text-left">
-//           <CardHeader>
-//             <CardTitle className="text-4xl md:text-4xl font-bold justify-center items-center flex p-2 md:p-4">
-//               {service.name}
-//             </CardTitle>
-//           </CardHeader>
-//           <CardDescription className="text-sm md:text-base px-2 md:px-0">
-//             {service.description}
-//           </CardDescription>
-//         </CardContent>
-
-//         <BorderBeam duration={8} size={100} />
-//       </Card>
-//     </motion.div>
-//   );
-// };
-
-// export function ServiceCard(){
-//   const [services,setServices]= useState <Service[]>([]);
-
-//   useEffect(()=>{
-//     const fetchServices = async()=>{
-//        try{
-//         const response = await fetch("http://localhost:3001/api/services");
-//         const data = await response.json();
-//         setServices(data);
-
-//        }catch(error){
-//           console.error("Failked to featc services :" , error);
-//        }
-//     };
-//     fetchServices();
-//   },[]);
-
-
-//   return (
-//     <div className="grid grid-cols-1 gap-8 w-full px-4 pb-16 md:px-12 overflow-x-hidden">
-//       {services.map((service, index) => (
-//         <ServiceCardItem key={service.id} service={service} index={index} />
-//       ))}
-//     </div>
-//   );
-// }
-
