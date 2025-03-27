@@ -23,7 +23,8 @@ export default function LoginForm() {
         };
 
         try {
-            const response = await fetch("http://localhost:8080/register", {  // ✅ Fixed API URL
+            const response = await fetch("https://hacfy-cyberchetana-backend-2.onrender.com/register", {  
+
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
