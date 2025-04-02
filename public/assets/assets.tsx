@@ -31,6 +31,9 @@ import image4 from "./sbiimage3.png"
 import image5 from "./sbi5.png"
 import image6 from "./tickets.png"
 import image7 from "./gibli.png"
+import blogNews from "./sucide.png"
+import  blogNews1 from "./digital-arrest.png"
+import  blogNews2 from "./market-froud.jpg"
 export const assets ={
     logo,
     menublack,
@@ -64,7 +67,10 @@ export const assets ={
     image4,
     image5,
     image6,
-    image7
+    image7,
+    blogNews,
+    blogNews1,
+    blogNews2
 
 
 }

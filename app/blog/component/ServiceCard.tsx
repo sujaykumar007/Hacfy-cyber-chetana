@@ -6,7 +6,7 @@ import { assets } from "@/public/assets/assets";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
-
+import Link from "next/link";
 const services = [
   {
     id: 1,
@@ -118,9 +118,9 @@ const ServiceCardItem = ({ service, index }: {
 
           {/* Know More Button */}
           <div className="mt-6 flex justify-end">
-            <button className="font-semibold text-orange-600 sm:text-center">
+            <Link href="/knowMore" className="font-semibold text-orange-600 sm:text-center">
               Know More...
-            </button>
+            </Link>
           </div>
         </CardContent>
 
