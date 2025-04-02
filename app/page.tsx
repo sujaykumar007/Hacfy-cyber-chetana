@@ -10,8 +10,8 @@ export default function Home() {
     <div className="w-full mx-auto">
       <HeroSection />
 
-      <div className="w-full flex flex-col h-auto md:h-screen">
-  <div className="h-auto md:h-1/2 w-full">
+  <div className="w-full flex flex-col h-auto md:h-screen">
+  <div>
     <MarqueeDemo />
   </div>
   <div>
@@ -19,7 +19,7 @@ export default function Home() {
   </div>
 </div>
 
-<div className=" h-auto w-full mt-[-140] lg:mt-20 sm:mt-0">
+<div className=" h-auto w-full pt-[-140] lg:pt-20  sm:mt-0">
   <HeroCard />
 </div>
 

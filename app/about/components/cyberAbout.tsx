@@ -20,7 +20,7 @@ export default function BackgroundImage() {
             className="font-extrabold text-white tracking-wide text-center"
             style={{ fontSize: "clamp(2rem, 8vw, 5rem)" }}
           >
-            <span style={{ color: "var(--primary-orange)" }}>What</span> is <span style={{ color: "var(--primary-orange)" }}>CyberChetana</span>?
+            <span>WHAT IS HACFY CYBERCHETANA</span>?
           </h1>
         </div>
       </div>
