@@ -5,7 +5,7 @@ import ImageSwiper from "@/app/blog/component/swiper"
 
 export default function Blog() {
     return(
-        <div className="justify-center items-center ">
+        <div className="justify-center items-center  ">
         <ImageSwiper/>
     
         <div>

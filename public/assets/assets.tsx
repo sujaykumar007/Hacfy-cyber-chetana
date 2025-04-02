@@ -30,7 +30,7 @@ import image3 from "./sbiimage2.png"
 import image4 from "./sbiimage3.png"
 import image5 from "./sbi5.png"
 import image6 from "./tickets.png"
-
+import image7 from "./gibli.png"
 export const assets ={
     logo,
     menublack,
@@ -63,7 +63,8 @@ export const assets ={
     image3,
     image4,
     image5,
-    image6
+    image6,
+    image7
 
 
 }

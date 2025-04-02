@@ -14,7 +14,8 @@ const links = [
   { image: '/assets/sbiimage1.png', text: 'Scam 2' },
   { image: '/assets/sbiimage2.png', text: 'Scam 3' },
   { image: '/assets/sbiimage3.png', text: 'Scam 4' },
-  {image : '/assets/tickets.png' , text :'Scam 6'}
+  {image : '/assets/tickets.png' , text :'Scam 6'},
+  {image : '/assets/gibli.png' , text :'Scam 7'}
  
 ];
 

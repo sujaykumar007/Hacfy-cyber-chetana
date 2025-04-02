@@ -95,7 +95,8 @@ const ServiceCardItem = ({ service, index }: {
             src={service.image}
             alt={service.name}
             width={600}
-            className="rounded-xl object-cover border shadow-md w-full md:w-auto transition-all duration-500 filter grayscale hover:grayscale-0"
+            className="rounded-xl object-cover border shadow-md w-full md:w-auto transition-all duration-500 filter md:grayscale hover:grayscale-0"
+
           />
         </div>
 
@@ -117,8 +118,8 @@ const ServiceCardItem = ({ service, index }: {
 
           {/* Know More Button */}
           <div className="mt-6 flex justify-end">
-            <button className="relative overflow-hidden rounded-lg px-6 py-2 font-semibold text-white bg-blue-900">
-              Know More
+            <button className="font-semibold text-orange-600 sm:text-center">
+              Know More...
             </button>
           </div>
         </CardContent>
