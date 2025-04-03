@@ -14,28 +14,27 @@ export default function LoginForm() {
     };
 
     const handleSubmit = async () => {
-        // Trim input values
         const trimmedData = {
             firstName: formData.firstName.trim(),
             lastName: formData.lastName.trim(),
             email: formData.email.trim(),
-            phoneNumber: formData.phoneNumber.trim()
+            phoneNumber: formData.phoneNumber.trim(),
         };
-
+    
         try {
-            const response = await fetch("https://hacfy-cyberchetana-backend-2.onrender.com/register", {  
-
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(trimmedData),
-            });
-
+            const response = await fetch(
+                "https://hacfy-cyberchetana-backend-2.onrender.com/register",  // 🌐 Use deployed backend
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(trimmedData),
+                }
+            );
+    
             const data = await response.json();
             if (response.ok) {
                 alert("✅ Registration successful! Check your email.");
-                setFormData({ firstName: "", lastName: "", email: "", phoneNumber: "" }); // Clear form
+                setFormData({ firstName: "", lastName: "", email: "", phoneNumber: "" });
             } else {
                 alert("❌ Error: " + data.error);
             }
@@ -44,7 +43,7 @@ export default function LoginForm() {
             alert("Something went wrong!");
         }
     };
-
+    
     return (
         <section 
             id="pledge" 
