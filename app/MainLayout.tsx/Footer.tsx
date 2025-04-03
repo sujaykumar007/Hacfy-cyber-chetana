@@ -27,6 +27,7 @@ export default function Footer() {
     <li className="hover:text-primary-hover cursor-pointer"><Link href="/">Home</Link></li>
     <li className="hover:text-primary-hover cursor-pointer"><Link href="/about">About Us</Link></li>
     <li className="hover:text-primary-hover cursor-pointer"><Link href="/blog">Blog</Link></li>
+    <li className="hover:text-primary-hover cursor-pointer"><Link href="/crimes">Crimes</Link></li>
     <li className="hover:text-primary-hover cursor-pointer"><Link href="/#pledge">Pledge</Link></li>
   </ul>
 </div>

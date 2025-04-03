@@ -45,7 +45,8 @@ export default function Navbar() {
 
                     <li><Link href="/" className="hover:text-[#ff8533]">Home</Link></li>
                     <li><Link href="/about" className="hover:text-[#ff8533]">About Us</Link></li>
-                    <li><Link href="/blog" className="hover:text-[#ff8533]">Blog</Link></li>
+                    <li><Link href="/crimes" className="hover:text-[#ff8533]">Crimes</Link></li>
+                    <li><Link href="/blog" className="hover:text-[#ff8533]">Blogs</Link></li>
                 </ul>
 
                 {/* Right Section */}
@@ -76,6 +77,7 @@ export default function Navbar() {
                     {/* Mobile Menu Links */}
                     <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
                     <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
+                    <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/crimes" onClick={() => setIsMenuOpen(false)}>Crimes</Link></li>
                     <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
                     <li className="text-lg font-medium  my-4" style={{ color: "var(--primary-blue)" }}><Link href="/#pledge" onClick={scrollToPledge}>Pledge</Link></li>
                 </ul>  

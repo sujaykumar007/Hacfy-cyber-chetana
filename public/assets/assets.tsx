@@ -34,6 +34,8 @@ import image7 from "./gibli.png"
 import blogNews from "./sucide.png"
 import  blogNews1 from "./digital-arrest.png"
 import  blogNews2 from "./market-froud.jpg"
+import  investment from "./inevstment.png"
+
 export const assets ={
     logo,
     menublack,
@@ -70,7 +72,8 @@ export const assets ={
     image7,
     blogNews,
     blogNews1,
-    blogNews2
+    blogNews2,
+    investment
 
 
 }

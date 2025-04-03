@@ -1,19 +1,9 @@
+import { KnowMore } from "./knowMore"
 
-import { ServiceCard } from "@/app/blog/component/ServiceCard"
-import ImageSwiper from "@/app/blog/component/swiper"
-
-
-export default function Blog() {
+export default function Home(){
     return(
-        <div className="justify-center items-center  ">
-        <ImageSwiper/>
-    
-        <div>
-       <ServiceCard/>
+        <div className="justify-center">
+       <KnowMore/>
         </div>
-        </div>
-       
     )
-
-  }
-  
+}

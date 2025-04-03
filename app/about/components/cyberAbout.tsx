@@ -20,7 +20,7 @@ export default function BackgroundImage() {
             className="font-extrabold text-white tracking-wide text-center"
             style={{ fontSize: "clamp(2rem, 8vw, 5rem)" }}
           >
-            <span>WHAT IS HACFY CYBERCHETANA</span>?
+            <span>WHAT IS HACFY CYBER CHETANA</span>?
           </h1>
         </div>
       </div>
