@@ -48,12 +48,9 @@ export async function POST(req: NextRequest) {
 
     const isWindows = os.platform() === 'win32';
 
+    
     const browser = await puppeteer.launch({
-      executablePath: isWindows
-        ? 'C:/Program Files/Google/Chrome/Application/chrome.exe'
-        : 'C:\Users\info>google-chrome', 
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      executablePath: 'C:\Users\info\.cache\puppeteer\chrome\win64-135.0.7049.95\chrome-win64\chrome.exe',
     });
     
     const page = await browser.newPage();
