@@ -12,7 +12,7 @@ const generateCertificateHTML = (firstName: string, lastName: string) => `
     <style>
       body { font-family: 'Times New Roman', serif; text-align: center; padding: 50px; background-color: #f8f9fa; }
       .certificate-container { width: 800px; height: 600px; background: white; padding: 50px; border: 10px solid #2c3e50; display: inline-block; position: relative; }
-      .certificate-title { font-size: 32px; font-weight: bold; text-transform: uppercase; color: #2c3e50; }
+      .certificate-title { font-size: 22px; font-weight: bold; text-transform: uppercase; color: #2c3e50; }
       .certificate-subtitle { font-size: 20px; text-transform: uppercase; margin-bottom: 20px; color: #34495e; }
       .certificate-body { font-size: 18px; margin-top: 20px; }
       .certificate-name { font-size: 28px; font-weight: bold; font-style: italic; margin-top: 10px; color: #2c3e50; }
