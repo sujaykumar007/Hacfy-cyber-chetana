@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
     const pdfBuffer = await page.pdf({ format: 'A4' });
     await browser.close();
 
-    // Convert Uint8Array to Buffer
+
     const buffer = Buffer.from(pdfBuffer);
 
     const transporter = nodemailer.createTransport({
