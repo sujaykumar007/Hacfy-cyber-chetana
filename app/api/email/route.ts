@@ -51,9 +51,9 @@ export async function POST(req: NextRequest) {
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
-    
-    
+   
     const page = await browser.newPage();
+    await page.goto('https://www.google.com/chrome/');
     await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
     const pdfBuffer = await page.pdf({ format: 'a4' });
     await browser.close();
