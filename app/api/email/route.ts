@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
     const browser = await puppeteer.launch({
       executablePath: isWindows
         ? 'C:/Program Files/Google/Chrome/Application/chrome.exe'
-        : '/usr/bin/google-chrome', // or '/usr/bin/chromium'
+        : 'C:\Users\info>google-chrome', 
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
