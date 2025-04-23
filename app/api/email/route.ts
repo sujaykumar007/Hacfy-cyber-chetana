@@ -46,8 +46,8 @@ export async function POST(req: NextRequest) {
 
     const browser = await puppeteer.launch({
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    })
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
     
     
     const page = await browser.newPage();
@@ -80,6 +80,7 @@ export async function POST(req: NextRequest) {
           contentType: 'application/pdf',
         },
       ],
+      
     });
 
     return NextResponse.json({ message: 'PDF sent to email' });
