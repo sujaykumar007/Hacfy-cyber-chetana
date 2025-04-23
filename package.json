@@ -27,6 +27,7 @@
     "motion": "^12.4.9",
     "next": "^15.2.3",
     "nodemailer": "^6.10.1",
+    "os": "^0.1.2",
     "puppeteer": "^24.7.1",
     "puppeteer-core": "^10.4.0",
     "react": "^19.0.0",

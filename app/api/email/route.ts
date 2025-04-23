@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-
+import os from 'os';
 import puppeteer from 'puppeteer-core';
 const generateCertificateHTML = (firstName: string, lastName: string) => `
   <!DOCTYPE html>
@@ -46,12 +46,16 @@ export async function POST(req: NextRequest) {
     const htmlContent = generateCertificateHTML(firstName, lastName);
 
 
+    const isWindows = os.platform() === 'win32';
+
     const browser = await puppeteer.launch({
-      executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+      executablePath: isWindows
+        ? 'C:/Program Files/Google/Chrome/Application/chrome.exe'
+        : '/usr/bin/google-chrome', // or '/usr/bin/chromium'
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
-   
+    
     const page = await browser.newPage();
     await page.goto('https://www.google.com/chrome/');
     await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
