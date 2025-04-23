@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import puppeteer from 'puppeteer';
 
+
+import puppeteer from 'puppeteer-core';
 const generateCertificateHTML = (firstName: string, lastName: string) => `
   <!DOCTYPE html>
   <html lang="en">
@@ -44,7 +45,9 @@ export async function POST(req: NextRequest) {
 
     const htmlContent = generateCertificateHTML(firstName, lastName);
 
+
     const browser = await puppeteer.launch({
+      executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
@@ -52,7 +55,7 @@ export async function POST(req: NextRequest) {
     
     const page = await browser.newPage();
     await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
-    const pdfBuffer = await page.pdf({ format: 'A4' });
+    const pdfBuffer = await page.pdf({ format: 'a4' });
     await browser.close();
 
 
