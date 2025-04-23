@@ -45,10 +45,10 @@ export async function POST(req: NextRequest) {
     const htmlContent = generateCertificateHTML(firstName, lastName);
 
     const browser = await puppeteer.launch({
-      executablePath: 'C:\\Users\\info\\.cache\\puppeteer\\chrome\\win64-135.0.7049.95\\chrome-win64\\chrome.exe',
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     })
+    
     
     const page = await browser.newPage();
     await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
