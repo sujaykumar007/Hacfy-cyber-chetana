@@ -1,36 +1,37 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-const puppeteer = require('puppeteer');
-import os from 'os';
+import puppeteer from 'puppeteer';
+
+// HTML template generator
 const generateCertificateHTML = (firstName: string, lastName: string) => `
   <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Certificate of Completion</title>
-    <style>
-      body { font-family: 'Times New Roman', serif; text-align: center; padding: 50px; background-color: #f8f9fa; }
-      .certificate-container { width: 800px; height: 600px; background: white; padding: 50px; border: 10px solid #2c3e50; display: inline-block; position: relative; }
-      .certificate-title { font-size: 32px; font-weight: bold; text-transform: uppercase; color: #2c3e50; }
-      .certificate-subtitle { font-size: 20px; text-transform: uppercase; margin-bottom: 20px; color: #34495e; }
-      .certificate-body { font-size: 18px; margin-top: 20px; }
-      .certificate-name { font-size: 28px; font-weight: bold; font-style: italic; margin-top: 10px; color: #2c3e50; }
-      .certificate-footer { margin-top: 50px; font-size: 16px; display: flex; justify-content: space-between; padding: 0 50px; }
-      .certificate-footer div { width: 40%; border-top: 2px solid black; padding-top: 5px; text-align: center; }
-    </style>
-  </head>
-  <body>
-    <div class="certificate-container">
-      <h1 class="certificate-title">Certificate of Completion</h1>
-      <p class="certificate-subtitle">This Certificate is proudly presented to</p>
-      <p class="certificate-name">${firstName} ${lastName}</p>
-      <p class="certificate-body">for successfully completing the course.</p>
-      <div class="certificate-footer">
-        <div><p>Date</p>[Date]</div>
-        <div><p>Signature</p>[Authorized Signatory]</div>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <title>Certificate</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          padding: 50px;
+        }
+        .certificate {
+          border: 10px solid #ccc;
+          padding: 50px;
+        }
+        h1 {
+          color: #333;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="certificate">
+        <h1>Certificate of Registration</h1>
+        <p>This certifies that</p>
+        <h2>${firstName} ${lastName}</h2>
+        <p>has successfully registered.</p>
       </div>
-    </div>
-  </body>
+    </body>
   </html>
 `;
 
@@ -44,22 +45,17 @@ export async function POST(req: NextRequest) {
 
     const htmlContent = generateCertificateHTML(firstName, lastName);
 
-
-    const isWindows = os.platform() === 'win32';
-
     const browser = await puppeteer.launch({
-      // executablePath: 'C:\Users\info\.cache\puppeteer\chrome\win64-135.0.7049.95\chrome-win64\chrome.exe',
-      executablePath:process.env.CHROME_PATH,
+      executablePath: process.env.CHROME_PATH, // Optional: Set if you're on vercel or custom env
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
-    // C:\Users\info\.cache\puppeteer\chrome\win64-135.0.7049.95\chrome-win64\chrome.exe
+
     const page = await browser.newPage();
-    await page.goto('https://www.google.com/chrome/');
     await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
+
     const pdfBuffer = await page.pdf({ format: 'a4' });
     await browser.close();
-
-
-    const buffer = Buffer.from(pdfBuffer);
 
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
@@ -79,133 +75,18 @@ export async function POST(req: NextRequest) {
       attachments: [
         {
           filename: 'certificate.pdf',
-          content: buffer,
+          content:Buffer.from(pdfBuffer),
           contentType: 'application/pdf',
         },
       ],
-      
     });
 
     return NextResponse.json({ message: 'PDF sent to email' });
   } catch (error: unknown) {
+    console.error('Email PDF error:', error);
     if (error instanceof Error) {
-      console.error('Error:', error.message);
       return NextResponse.json({ error: `Failed to send email: ${error.message}` }, { status: 500 });
     }
-    console.error('Unknown error:', error);
     return NextResponse.json({ error: 'Failed to send email: Unknown error' }, { status: 500 });
   }
 }
-// import { NextRequest, NextResponse } from 'next/server';
-// import nodemailer from 'nodemailer';
-// import fetch from 'node-fetch';
-
-
-// const generateCertificateHTML = (firstName: string, lastName: string) => `
-//   <!DOCTYPE html>
-//   <html lang="en">
-//   <head>
-//     <meta charset="UTF-8">
-//     <title>Certificate of Completion</title>
-//     <style>
-//       body { font-family: 'Times New Roman', serif; text-align: center; padding: 50px; background-color: #f8f9fa; }
-//       .certificate-container { width: 800px; height: 600px; background: white; padding: 50px; border: 10px solid #2c3e50; display: inline-block; position: relative; }
-//       .certificate-title { font-size: 22px; font-weight: bold; text-transform: uppercase; color: #2c3e50; }
-//       .certificate-subtitle { font-size: 20px; text-transform: uppercase; margin-bottom: 20px; color: #34495e; }
-//       .certificate-body { font-size: 18px; margin-top: 20px; }
-//       .certificate-name { font-size: 28px; font-weight: bold; font-style: italic; margin-top: 10px; color: #2c3e50; }
-//       .certificate-footer { margin-top: 50px; font-size: 16px; display: flex; justify-content: space-between; padding: 0 50px; }
-//       .certificate-footer div { width: 40%; border-top: 2px solid black; padding-top: 5px; text-align: center; }
-//     </style>
-//   </head>
-//   <body>
-//     <div class="certificate-container">
-//       <h1 class="certificate-title">Certificate of Completion</h1>
-//       <p class="certificate-subtitle">This Certificate is proudly presented to</p>
-//       <p class="certificate-name">${firstName} ${lastName}</p>
-//       <p class="certificate-body">for successfully completing the course.</p>
-//       <div class="certificate-footer">
-//         <div><p>Date</p>[Date]</div>
-//         <div><p>Signature</p>[Authorized Signatory]</div>
-//       </div>
-//     </div>
-//   </body>
-//   </html>
-// `;
-
-// export async function POST(req: NextRequest) {
-//   try {
-//     const { firstName, lastName, email, phoneNumber } = await req.json();
-
-//     if (!firstName || !lastName || !email || !phoneNumber) {
-//       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
-//     }
-
-//     const htmlContent = generateCertificateHTML(firstName, lastName);
-
-//     const response = await fetch('https://chrome.browserless.io/pdf', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Cache-Control': 'no-cache',
-//         'Authorization': `Bearer ${process.env.BROWSERLESS_API_KEY}`,
-//       },
-//       body: JSON.stringify({
-//         html: htmlContent,
-//         options: {
-//           format: 'A4',
-//           landscape: false,
-//           printBackground: true,
-//         }
-//       }),
-//     });
-    
-//     if (!response.ok) {
-//       const errorDetails = await response.text();
-//       console.error('PDF Generation Error:', errorDetails);
-//       throw new Error(`Failed to generate PDF: ${errorDetails}`);
-//     }
-  
-
-
-//     const transporter = nodemailer.createTransport({
-//       host: 'smtp.gmail.com',
-//       port: 465,
-//       secure: true,
-//       logger: true,
-//       debug: true,
-//       auth: {
-//         user: process.env.EMAIL_USER,
-//         pass: process.env.EMAIL_PASS,
-//       },
-//     });
-//     const pdfBuffer = await Response.arrayBuffer();
-//     await transporter.sendMail({
-//       from: process.env.EMAIL_USER,
-//       to: email,
-//       subject: 'Your Certificate of Completion',
-//       text: `Hi ${firstName},\n\nAttached is your certificate.`,
-//       attachments: [
-//         {
-//           filename: 'certificate.pdf',
-//           content: Buffer.from(pdfBuffer),
-//           contentType: 'application/pdf',
-//         },
-//       ],
-//     });
-    
-//     return NextResponse.json({ message: 'Certificate sent to email' });
-//   } catch (error) {
-//     console.error('Error:', error);
-//     return NextResponse.json({ error: "Failed to process request:"  }, { status: 500 });
-//   }
-// }
-
-
-//     // const isWindows = os.platform() === 'win32';
-
-    
-//     // const browser = await puppeteer.launch({
-//     //   executablePath: 'C:\Users\info\.cache\puppeteer\chrome\win64-135.0.7049.95\chrome-win64\chrome.exe',
-//     // });
-  
