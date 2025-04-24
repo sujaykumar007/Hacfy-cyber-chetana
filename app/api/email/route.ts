@@ -38,11 +38,10 @@ export async function POST(req: NextRequest) {
 
     const browser = await puppeteer.launch({
       headless: true,
-      executablePath: isProd
-        ? '/usr/bin/google-chrome' // for Vercel
-        : undefined, // auto-detect local
+      executablePath: isProd ? '/usr/bin/google-chrome' : undefined, // Vercel will use this path
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
+    
 
     const page = await browser.newPage();
     await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
