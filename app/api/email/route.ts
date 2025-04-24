@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { Buffer } from 'buffer';
 import puppeteer from 'puppeteer-core';
-import path from 'path';
+
 
 const generateCertificateHTML = (firstName: string, lastName: string) => `
   <!DOCTYPE html>
@@ -85,10 +85,16 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ message: 'Certificate sent to email' });
-  } catch (error: any) {
-    console.error('Error sending email:', error);
-    return NextResponse.json({ error: `Failed to send email: ${error.message}` }, { status: 500 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error('Error sending email:', error);
+      return NextResponse.json({ error: `Failed to send email: ${error.message}` }, { status: 500 });
+    } else {
+      console.error('Unknown error', error);
+      return NextResponse.json({ error: 'An unknown error occurred' }, { status: 500 });
+    }
   }
+  
 }
 
     // const isWindows = os.platform() === 'win32';
