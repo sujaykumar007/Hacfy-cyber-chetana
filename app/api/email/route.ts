@@ -1,13 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import puppeteer from 'puppeteer-core'; // Use puppeteer-core
-import chromium from '@sparticuz/chromium'; // Chromium helper for production
+import puppeteer from 'puppeteer-core';
 
 const generateCertificateHTML = (firstName: string, lastName: string) => `
+  <!DOCTYPE html>
   <html>
+    <head>
+      <meta charset="utf-8" />
+      <title>Certificate</title>
+      <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .certificate { border: 10px solid #ccc; padding: 50px; }
+        h1 { color: #333; }
+      </style>
+    </head>
     <body>
-      <h1>Certificate of Registration</h1>
-      <p>This certifies that <strong>${firstName} ${lastName}</strong> has successfully registered.</p>
+      <div class="certificate">
+        <h1>Certificate of Registration</h1>
+        <p>This certifies that</p>
+        <h2>${firstName} ${lastName}</h2>
+        <p>has successfully registered.</p>
+      </div>
     </body>
   </html>
 `;
@@ -15,7 +28,6 @@ const generateCertificateHTML = (firstName: string, lastName: string) => `
 export async function POST(req: NextRequest) {
   try {
     const { firstName, lastName, email, phoneNumber } = await req.json();
-
     if (!firstName || !lastName || !email || !phoneNumber) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
@@ -23,27 +35,13 @@ export async function POST(req: NextRequest) {
     const htmlContent = generateCertificateHTML(firstName, lastName);
 
     const isProd = process.env.NODE_ENV === 'production';
-    let puppeteer: any;
-    let chromium: any = null;
-    let executablePath: string | undefined = undefined;
-    let args: string[] = [];
-    
-    if (isProd) {
-      puppeteer = (await import('puppeteer-core')).default;
-      chromium = await import('chrome-aws-lambda');
-    
-      executablePath = await chromium.executablePath;
-      args = chromium.args;
-    } else {
-      puppeteer = (await import('puppeteer')).default;
-      executablePath = undefined; // Local Puppeteer uses its own Chromium
-      args = [];
-    }
-    
+
     const browser = await puppeteer.launch({
-      args,
-      executablePath,
       headless: true,
+      executablePath: isProd
+        ? '/usr/bin/google-chrome' // for Vercel
+        : undefined, // auto-detect local
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
     const page = await browser.newPage();
@@ -69,7 +67,7 @@ export async function POST(req: NextRequest) {
       attachments: [
         {
           filename: 'certificate.pdf',
-          content: Buffer.from(pdfBuffer), // Convert Uint8Array to Buffer
+          content: pdfBuffer,
           contentType: 'application/pdf',
         },
       ],
@@ -77,10 +75,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ message: 'PDF sent to email' });
   } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error('Error:', error.message);
-      return NextResponse.json({ error: `Failed to send email: ${error.message}` }, { status: 500 });
-    }
-    return NextResponse.json({ error: 'Failed to send email: Unknown error' }, { status: 500 });
+    console.error('Email PDF error:', error);
+    return NextResponse.json({ error: `Failed: ${error instanceof Error ? error.message : 'Unknown error'}` }, { status: 500 });
   }
 }
