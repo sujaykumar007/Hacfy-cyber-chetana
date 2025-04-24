@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-
-import os from 'os';
+import { Buffer } from 'buffer';
 import puppeteer from 'puppeteer-core';
+import path from 'path';
+
 const generateCertificateHTML = (firstName: string, lastName: string) => `
   <!DOCTYPE html>
   <html lang="en">
@@ -44,21 +45,18 @@ export async function POST(req: NextRequest) {
     }
 
     const htmlContent = generateCertificateHTML(firstName, lastName);
-
-
-    const isWindows = os.platform() === 'win32';
-
-    
     const browser = await puppeteer.launch({
-      executablePath: 'C:\Users\info\.cache\puppeteer\chrome\win64-135.0.7049.95\chrome-win64\chrome.exe',
+      executablePath: 'C:/Users/info/.cache/puppeteer/chrome/win64-135.0.7049.95/chrome-win64/chrome.exe',
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
     
     const page = await browser.newPage();
-    await page.goto('https://www.google.com/chrome/');
     await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
-    const pdfBuffer = await page.pdf({ format: 'a4' });
-    await browser.close();
 
+    const pdfBuffer = await page.pdf({ format: 'a4' });
+
+    await browser.close();
 
     const buffer = Buffer.from(pdfBuffer);
 
@@ -75,8 +73,8 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Your Registration Certificate',
-      text: 'Attached is your certificate of registration.',
+      subject: 'Your Certificate of Completion',
+      text: 'Please find your certificate attached.',
       attachments: [
         {
           filename: 'certificate.pdf',
@@ -84,16 +82,19 @@ export async function POST(req: NextRequest) {
           contentType: 'application/pdf',
         },
       ],
-      
     });
 
-    return NextResponse.json({ message: 'PDF sent to email' });
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error('Error:', error.message);
-      return NextResponse.json({ error: `Failed to send email: ${error.message}` }, { status: 500 });
-    }
-    console.error('Unknown error:', error);
-    return NextResponse.json({ error: 'Failed to send email: Unknown error' }, { status: 500 });
+    return NextResponse.json({ message: 'Certificate sent to email' });
+  } catch (error: any) {
+    console.error('Error sending email:', error);
+    return NextResponse.json({ error: `Failed to send email: ${error.message}` }, { status: 500 });
   }
 }
+
+    // const isWindows = os.platform() === 'win32';
+
+    
+    // const browser = await puppeteer.launch({
+    //   executablePath: 'C:\Users\info\.cache\puppeteer\chrome\win64-135.0.7049.95\chrome-win64\chrome.exe',
+    // });
+  
