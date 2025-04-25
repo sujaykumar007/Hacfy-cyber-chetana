@@ -28,19 +28,21 @@ const handleSubmit = async () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(trimmedData),
       });
-  
-      const data = await response.json();
-      if (response.ok) {
+    
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("API Error:", errorData);
+        alert('❌ Error: ' + errorData.error);
+      } else {
+        const data = await response.json();
         alert('✅ Registration successful! Check your email.');
         setFormData({ firstName: '', lastName: '', email: '', phoneNumber: '' });
-      } else {
-        alert('❌ Error: ' + data.error);
       }
     } catch (error) {
-      console.error('❌ Error:', error);
+      console.error("❌ Error:", error);
       alert('Something went wrong!');
     }
-  };
+    
   
   return (
     <section
@@ -125,4 +127,4 @@ const handleSubmit = async () => {
       </div>
     </section>
   );
-}
+}}
