@@ -97,7 +97,7 @@ const ImageSwiper = () => {
                 alt={slide.title}
               
                 
-                className="rounded-xl h-full"
+                className=" h-full"
               />
             </SwiperSlide>
           ))}

@@ -44,7 +44,7 @@ const ReviewCard = ({
     >
     
       <figcaption
-        className="text-xl font-bold min-h-[50px] flex items-center"
+        className="text-xl font-bold min-h-[50px] flex items-center text-width w-[70%]"
         style={{ color: "var(--primary-blue)" }}
       >
         {name}

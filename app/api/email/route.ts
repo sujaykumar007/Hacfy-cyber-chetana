@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium'; // Ensure @sparticuz/chromium is imported
 
 const generateCertificateHTML = (firstName: string, lastName: string) => `
   <!DOCTYPE html>
@@ -36,12 +37,17 @@ export async function POST(req: NextRequest) {
 
     const isProd = process.env.NODE_ENV === 'production';
 
-    const browser = await puppeteer.launch({
-      headless: true,
-      executablePath: isProd ? '/usr/bin/google-chrome' : undefined, // Vercel will use this path
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
-    
+    const executablePath = isProd ? await chromium.executablePath() : undefined;
+
+if (!executablePath && isProd) {
+  throw new Error('Chromium executable path is not defined for production');
+}
+
+const browser = await puppeteer.launch({
+  headless: true,
+  executablePath, // Path to Chromium executable from @sparticuz/chromium
+  args: ['--no-sandbox', '--disable-setuid-sandbox'],
+});
 
     const page = await browser.newPage();
     await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
