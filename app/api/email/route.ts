@@ -44,9 +44,9 @@ if (!executablePath && isProd) {
 }
 
 const browser = await puppeteer.launch({
+  args: chromium.args,
+  executablePath: await chromium.executablePath(),
   headless: true,
-  executablePath, // Path to Chromium executable from @sparticuz/chromium
-  args: ['--no-sandbox', '--disable-setuid-sandbox'],
 });
 
     const page = await browser.newPage();
