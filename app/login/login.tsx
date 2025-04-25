@@ -1,20 +1,20 @@
 "use client";
 import { useState } from "react";
 
-export default function HomePage() {
+export default function LoginForm() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    phoneNumber: "",
+    phoneNumber: "",  
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
- // frontend component
-const handleSubmit = async () => {
+  // frontend component
+  const handleSubmit = async () => {
     const trimmedData = {
       firstName: formData.firstName.trim(),
       lastName: formData.lastName.trim(),
@@ -34,16 +34,16 @@ const handleSubmit = async () => {
         console.error("API Error:", errorData);
         alert('❌ Error: ' + errorData.error);
       } else {
-        const data = await response.json();
         alert('✅ Registration successful! Check your email.');
         setFormData({ firstName: '', lastName: '', email: '', phoneNumber: '' });
       }
+      
     } catch (error) {
       console.error("❌ Error:", error);
       alert('Something went wrong!');
     }
-    
-  
+  };
+
   return (
     <section
       id="pledge"
@@ -127,4 +127,4 @@ const handleSubmit = async () => {
       </div>
     </section>
   );
-}}
+}
