@@ -4,26 +4,46 @@ import puppeteer from 'puppeteer-core';
 import chromium from '@sparticuz/chromium'; // Ensure @sparticuz/chromium is imported
 
 const generateCertificateHTML = (firstName: string, lastName: string) => `
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="utf-8" />
-      <title>Certificate</title>
-      <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        .certificate { border: 10px solid #ccc; padding: 50px; }
-        h1 { color: #333; }
-      </style>
-    </head>
-    <body>
-      <div class="certificate">
-        <h1>Certificate of Registration</h1>
-        <p>This certifies that</p>
-        <h2>${firstName} ${lastName}</h2>
-        <p>has successfully registered.</p>
-      </div>
-    </body>
-  </html>
+  
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Certificate</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      .certificate {
+        border: 10px solid #ccc;
+        padding: 50px;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .logo {
+        width: 150px;
+        margin: 0 auto 30px;
+        display: block;
+      }
+      h1 {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="certificate">
+      <img src="/assets/logo.png" alt="Logo" class="logo" />
+      <h1>Certificate of Registration</h1>
+      <p>This certifies that</p>
+      <h2>${firstName} ${lastName}</h2>
+      <p>has successfully registered.</p>
+    </div>
+  </body>
+</html>
+
 `;
 
 export async function POST(req: NextRequest) {
