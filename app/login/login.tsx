@@ -47,7 +47,7 @@ export default function LoginForm() {
   return (
     <section
       id="pledge"
-      className="w-full flex justify-center items-start px-4 pb-0 h-screen md:min-h-screen overflow-y-auto align-middle"
+      className="w-full flex justify-center items-start px-4 pb-10 h-screen md:min-h-screen  align-middle"
       style={{ alignItems: "center", marginTop: -100 }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-2xl overflow-hidden w-full max-w-none mx-auto">
