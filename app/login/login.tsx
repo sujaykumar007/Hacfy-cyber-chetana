@@ -28,28 +28,52 @@ export default function LoginForm() {
       phoneNumber: formData.phoneNumber.trim(),
     };
 
-    try {
-      const response = await fetch("/api/email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(trimmedData),
-      });
+   try {
+  const response = await fetch("/api/email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(trimmedData),
+  });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("API Error:", errorData);
-        toast.error("" + errorData.error);
-      } else {
-        toast.success("Registration successful! Check your email.");
-        setFormData({ firstName: "", lastName: "", email: "", phoneNumber: "" });
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      toast.error("Something went wrong!");
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (!response.ok) {
+    const errorData = await response.json();
+    console.error("API Error:", errorData);
+
+    toast.error("" + errorData.error, {
+      style: {
+        background: "white",
+        color: "var(--primary-blue)",
+       border: "1px solid #e0e0e0", 
+        boxShadow: "0 2px 6px rgba(150,150,150,0.3)" // subtle gray shadow
+
+      },
+    });
+  } else {
+    toast.success("Registration successful! Check your email.", {
+      style: {
+        background: "white",
+        color: "var(--primary-blue)",
+    border: "1px solid #e0e0e0", 
+        boxShadow: "0 2px 6px rgba(150,150,150,0.3)" // subtle gray shadow
+
+      },
+    });
+
+    setFormData({ firstName: "", lastName: "", email: "", phoneNumber: "" });
+  }
+} catch (error) {
+  console.error("Error:", error);
+  toast.error("Something went wrong!", {
+    style: {
+      background: "white",
+      color: "var(--primary-blue)",
+    border: "1px solid #e0e0e0", 
+      boxShadow: "0 2px 6px rgba(150,150,150,0.3)" // subtle gray shadow
+
+    },
+  });
+}
+  }
 
   return (
     <section
