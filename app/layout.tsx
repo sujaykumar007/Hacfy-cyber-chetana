@@ -3,6 +3,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import Navbar from "./MainLayout.tsx/Navbar";
 import Footer from "./MainLayout.tsx/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 // Load Poppins font
 const poppins = Poppins({
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} font-poppins antialiased`}>
         <Navbar />
         <main>{children}</main>
+            <Toaster  />
         <Footer />
       </body>
     </html>
